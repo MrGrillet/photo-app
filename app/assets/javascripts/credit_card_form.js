@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load',function(){ 
   
   var show_error, stripeResponseHandler, submitHandler;
   
@@ -30,7 +30,7 @@ $(document).ready(function() {
       token = response.id;
       $form.append($("<input type=\"hidden\" name=\"payment[token]\" />").val(token));
       $("[data-stripe=number]").remove();
-      $("[data-stripe=cvv]").remove();
+      $("[data-stripe=cvc]").remove();
       $("[data-stripe=exp-year]").remove();
       $("[data-stripe=exp-month]").remove();
       $("[data-stripe=label]").remove();
@@ -40,7 +40,7 @@ $(document).ready(function() {
     return false;
   };
   show_error = function (message) {
-    if($("#flash-messages").size() < 1){
+    if($("#flash-messages").length < 1){
       $('div.container.main div:first').prepend("<div id='flash-messages'></div>")
     }
     $("#flash-messages").html('<div class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><div id="flash_alert">' + message + '</div></div>');
