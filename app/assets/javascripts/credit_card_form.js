@@ -1,5 +1,4 @@
-$(document).ready(function() {
-  
+$( document ).on('turbolinks:load', function() {
   var show_error, stripeResponseHandler, submitHandler;
   
   submitHandler = function (event) {
