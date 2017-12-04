@@ -40,7 +40,7 @@ $(document).ready(function() {
     return false;
   };
   show_error = function (message) {
-    if($("#flash-messages").size() < 1){
+    if($("#flash-messages").length < 1){
       $('div.container.main div:first').prepend("<div id='flash-messages'></div>")
     }
     $("#flash-messages").html('<div class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><div id="flash_alert">' + message + '</div></div>');
